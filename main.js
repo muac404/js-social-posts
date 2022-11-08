@@ -56,3 +56,27 @@ const posts = [
     }
 ];
 
+
+
+const postDetail = [];
+const contenutoPost = [];
+
+for (let i = 0; i < posts.length; i++) {
+    const singlePost = posts[i];
+    const content = singlePost.content
+    console.log(content)
+    contenutoPost.push(content);
+    
+    
+}
+
+
+console.log("tutti i contenuti", contenutoPost)
+
+for (let i = 0; i < contenutoPost.length; i++) {
+    const element = contenutoPost[i];
+
+    console.log(element)
+    
+}
+
