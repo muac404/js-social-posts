@@ -61,22 +61,24 @@ const posts = [
 const postDetail = [];
 const contenutoPost = [];
 
+const postsContainer = document.getElementById("container")
 for (let i = 0; i < posts.length; i++) {
-    const singlePost = posts[i];
-    const content = singlePost.content
-    console.log(content)
-    contenutoPost.push(content);
+    const post = posts[i];
+
+    const template = document.getElementById("post-template").content.cloneNode(true);
+    template.querySelector(".profile-pic").src = post.author.image
+    template.querySelector(".profile-pic").alt = post.author.name
+    template.querySelector(".post-meta__author").innerHTML = post.author.name
+    template.querySelector(".post-meta__time").innerHTML = post.created
+    template.querySelector(".post__text").innerHTML = post.content
+    template.querySelector(".post__image img").src = post.media
+    template.querySelector(".js-likes-counter").innerHTML = post.likes
+    postsContainer.append(template)
     
-    
+   
 }
 
 
-console.log("tutti i contenuti", contenutoPost)
 
-for (let i = 0; i < contenutoPost.length; i++) {
-    const element = contenutoPost[i];
 
-    console.log(element)
-    
-}
 
